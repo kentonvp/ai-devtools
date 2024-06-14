@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "devtools"
+version = "0.1.0"
+description = ""
+authors = ["kentonvp <kentonvanp@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.32.3"
+tree-sitter = "^0.22.3"
+tree-sitter-python = "^0.21.0"
+openai = "^1.34.0"
+rich = "^13.7.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+pytest = "^8.2.2"
+isort = "^5.13.2"
+pdoc3 = "^0.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
