@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from tree_sitter import Language, Node, Parser
 
 

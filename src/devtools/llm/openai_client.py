@@ -1,7 +1,8 @@
-from devtools.llm.client_interface import IClient
-from devtools.config import SYSTEM_PROMPT
 from openai import OpenAI
 from rich import print
+
+from devtools.config import system_prompt
+from devtools.llm.client_interface import IClient
 
 
 class OpenAIClient(IClient):
@@ -23,7 +24,9 @@ class OpenAIClient(IClient):
             raise RuntimeError("Must set `api_key` in `auth` dictionary!!!")
 
         self.model = config.get("model", "gpt-4")
-        self.system_prompt = config.get("system_prompt", SYSTEM_PROMPT)
+        self.system_prompt = config.get(
+            "system_prompt", system_prompt(config.get("language", "programming"))
+        )
         self.client = OpenAI(api_key=api_key)
 
     def send_prompt(self, prompt: str, **kwargs) -> str:
@@ -47,7 +50,7 @@ class OpenAIClient(IClient):
                 {"role": "user", "content": prompt},
             ],
             temperature=1,
-            max_tokens=500,
+            max_tokens=kwargs.get("max_tokens", 500),
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0,
