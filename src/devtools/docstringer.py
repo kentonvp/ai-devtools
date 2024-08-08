@@ -1,10 +1,15 @@
 import os
-from devtools.llm.client_interface import IClient
-from devtools.lang_processor.lang_processor_interface import ILanguageProcessor
+
 from rich import print
+
+from devtools.lang_processor.lang_processor_interface import ILanguageProcessor
+from devtools.llm.client_interface import IClient
 
 
 class DocStringWriter:
+
+    VERSION: str = "0.0.1"
+
     def __init__(self, client: IClient, parser: ILanguageProcessor) -> None:
         """
         This initializer method is for setting up the client and parser attributes.

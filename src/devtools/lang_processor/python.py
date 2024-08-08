@@ -1,7 +1,8 @@
-import tree_sitter_python as tspython
-from devtools.lang_processor.lang_processor_interface import ILanguageProcessor
-from tree_sitter import Language, Node, Parser
 import black
+import tree_sitter_python as tspython
+from tree_sitter import Language, Node, Parser
+
+from devtools.lang_processor.lang_processor_interface import ILanguageProcessor
 
 
 class PythonProcessor(ILanguageProcessor):

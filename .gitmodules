@@ -1,0 +1,3 @@
+[submodule "py-tree-sitter-languages"]
+	path = py-tree-sitter-languages
+	url = https://github.com/kentonvp/py-tree-sitter-languages

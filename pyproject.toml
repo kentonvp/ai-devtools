@@ -11,6 +11,8 @@ tree-sitter = "^0.22.3"
 tree-sitter-python = "^0.21.0"
 openai = "^1.34.0"
 rich = "^13.7.1"
+click = "^8.1.7"
+pyqt5 = "^5.15.10"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -18,6 +20,9 @@ black = "^24.4.2"
 pytest = "^8.2.2"
 isort = "^5.13.2"
 pdoc3 = "^0.10.0"
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core"]
